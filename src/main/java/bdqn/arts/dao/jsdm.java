@@ -9,6 +9,7 @@ public class jsdm {
     }
     public void lal(){
         System.out.println("5555555555555555555555555");
+        System.out.println("22222222222222222");
     }
 }
 
