@@ -4,5 +4,8 @@ public class jsdm {
     public static void main(String[] args) {
         System.out.println("wwwwww");
     }
+    public void aVoid(){
+        System.out.println("99999999999999");
+    }
 }
 
