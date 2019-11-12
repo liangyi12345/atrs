@@ -3,11 +3,14 @@ package bdqn.arts.pojo;
 专场分类表
  */
 
+import java.util.ArrayList;
+
 public class Session {
 
   private Integer id;
   private String title;
   private String details;
+  private ArrayList<Product> slist;
 
 
   public Integer getId() {
@@ -36,4 +39,11 @@ public class Session {
     this.details = details;
   }
 
+  public ArrayList<Product> getSlist() {
+    return slist;
+  }
+
+  public void setSlist(ArrayList<Product> slist) {
+    this.slist = slist;
+  }
 }

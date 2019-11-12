@@ -156,4 +156,24 @@ public class Product {
     this.imagePath = imagePath;
   }
 
+  @Override
+  public String toString() {
+    return "Product{" +
+            "id=" + id +
+            ", sid=" + sid +
+            ", gid=" + gid +
+            ", aid=" + aid +
+            ", name='" + name + '\'' +
+            ", introduction='" + introduction + '\'' +
+            ", details='" + details + '\'' +
+            ", inventory='" + inventory + '\'' +
+            ", original=" + original +
+            ", current=" + current +
+            ", byTheTime=" + byTheTime +
+            ", dateIssued=" + dateIssued +
+            ", texture='" + texture + '\'' +
+            ", size=" + size +
+            ", imagePath='" + imagePath + '\'' +
+            '}';
+  }
 }

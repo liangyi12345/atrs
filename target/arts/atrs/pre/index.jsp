@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
@@ -31,8 +30,8 @@
 		<div class="navbar clearfix">
 			<div class="content clearfix">
 				<ul>
-					<li class="cur"><a href="index.html">首页</a></li>
-					<li><a href="special.html">专场</a></li>
+					<li class="cur"><a href="${ctx}/atrs/pre/index.jsp">首页</a></li>
+					<li><a href="${ctx}/sessionServlet">专场</a></li>
 					<li><a href="mall.html">商城</a></li>
 					<li><a href="artist.html">艺术家</a></li>
 				</ul>
