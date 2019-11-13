@@ -104,7 +104,7 @@
 										</p>
 										<div class="price clearfix">
 											<span class="fl">￥${pr.current}<samp>原价￥${pr.original}</samp></span>
-											<a href="pro_detail.html" class="goumai fr ra3 transition">立即购买</a>
+											<a href="${ctx}/ProductServlet?pid=${pr.id}&ty=commodit" class="goumai fr ra3 transition">立即购买</a>
 										</div>
 									</div>
 

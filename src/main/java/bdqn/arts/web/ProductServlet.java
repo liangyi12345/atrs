@@ -17,13 +17,23 @@ import java.util.List;
 public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String ty=req.getParameter("ty");
-        if ("pro".equals(ty)) {
-            ProductService pro=new ProductServiceImpl();
+        HttpSession session=req.getSession();
+        ProductService pro=new ProductServiceImpl();
+        String ty = req.getParameter("ty");
+        System.out.println(ty);
+        if ("pro".equals(ty)){
+
             List<Product> list=pro.seclectAll();
-            HttpSession session=req.getSession();
             session.setAttribute("list",list);
             req.getRequestDispatcher("/atrs/pre/mall.jsp").forward(req,resp);
+        }
+        if ("commodit".equals(ty)){
+            Integer pid = Integer.parseInt(req.getParameter("pid"));
+            Product product = pro.getProduct(pid);
+            List<Product> list= pro.seclectAll();
+            session.setAttribute("pr",product);
+            session.setAttribute("list",list);
+            req.getRequestDispatcher("/atrs/pre/pro_detail.jsp").forward(req,resp);
         }
 
     }

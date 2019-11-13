@@ -20,7 +20,15 @@ public class Product {
   private String texture;
   private Integer size;
   private String imagePath;
+  private Artist artist;
 
+  public Artist getArtist() {
+    return artist;
+  }
+
+  public void setArtist(Artist artist) {
+    this.artist = artist;
+  }
 
   public Integer getId() {
     return id;

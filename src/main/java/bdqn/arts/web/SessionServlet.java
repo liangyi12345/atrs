@@ -40,16 +40,7 @@ public class SessionServlet extends HttpServlet {
             session.setAttribute("slist",slist);
             req.getRequestDispatcher("/atrs/pre/special_detail.jsp").forward(req,resp);
         }
-        if ("commodity".equals(ty)){
-            Integer pid = Integer.parseInt(req.getParameter("pid"));
-            List<Product> slist = (List<Product>)session.getAttribute("slist");
-            for (Product pr : slist){
-                if (pid == pr.getAid()){
-                    req.setAttribute("pr",pr);
 
-                }
-            }
-        }
     }
 
     @Override

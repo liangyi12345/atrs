@@ -12,9 +12,12 @@ import java.util.List;
 public class Tist {
     public static void main(String[] args) {
         SqlSession sqlSession = MyBatisUtil.createSqlSession();
+
         List<Product> list = sqlSession.getMapper(ProductMapper.class).seclectAll();
-        for (Product p:list) {
-            System.out.println(p.getId()+p.getOriginal());
+        for (Product p : list) {
+            System.out.println(p.getId() + p.getOriginal());
+
+
         }
 
     }
