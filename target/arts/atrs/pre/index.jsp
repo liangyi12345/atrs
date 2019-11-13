@@ -32,7 +32,7 @@
 				<ul>
 					<li class="cur"><a href="${ctx}/atrs/pre/index.jsp">首页</a></li>
 					<li><a href="${ctx}/sessionServlet">专场</a></li>
-					<li><a href="mall.html">商城</a></li>
+					<li><a href="${ctx}/ProductServlet">商城</a></li>
 					<li><a href="artist.html">艺术家</a></li>
 				</ul>
 			</div>
