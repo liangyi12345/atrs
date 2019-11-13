@@ -31,18 +31,10 @@
 		<div class="navbar clearfix">
 			<div class="content clearfix">
 				<ul>
-					<li class="cur">
-						<a href="index.html">首页</a>
-					</li>
-					<li>
-						<a href="special.html">专场</a>
-					</li>
-					<li>
-						<a href="mall2.jsp">商城</a>
-					</li>
-					<li>
-						<a href="artist.html">艺术家</a>
-					</li>
+					<li class="cur"><a href="${ctx}/atrs/pre/index.jsp">首页</a></li>
+					<li><a href="${ctx}/sessionServlet?ty=session">专场</a></li>
+					<li ><a href="${ctx}/ProductServlet?ty=pro">商城</a></li>
+					<li><a href="artist.html">艺术家</a></li>
 				</ul>
 			</div>
 		</div>
@@ -54,13 +46,8 @@
 				<div class="main-pro-info white-box  clearfix">
 					<div class="fangda clearfix fl">
 						<div id="showbox">
-						  <img src="${ctx}/atrs/statics/upload/14.jpg" width="1000" height="1000" />
-						  <img src="${ctx}/atrs/statics/upload/14.jpg" width="1000" height="1000" />
-						  <img src="${ctx}/atrs/statics/upload/14.jpg" width="1000" height="1000" />
-						  <img src="${ctx}/atrs/statics/upload/14.jpg" width="1000" height="1000" />
-						  <img src="${ctx}/atrs/statics/upload/14.jpg" width="1000" height="1000" />
-						  <img src="${ctx}/atrs/statics/upload/14.jpg" width="1000" height="1000" />
-						  <img src="${ctx}/atrs/statics/upload/14.jpg" width="1000" height="1000" />
+						  <img src="${ctx}/atrs/statics/files/zuopin/${pr.imagePath}" width="1000" height="1000" />
+
 						</div><!--展示图片盒子-->
 						<div id="showsum"></div><!--展示图片里边-->
 						<p class="showpage">
@@ -72,17 +59,17 @@
 					<!--产品信息介绍-->
 					<div class="fr pro-intro">
 						<div class="pb20 line-bot">
-							<h3 class="fs26 darkblack lh50 ellipsis">墙角数枝梅，凌寒独自开</h3>
-							<p class="fs14 lh20 over2">这里是简介这幅画的内容这里是简介这幅画的内容这里是简介这幅画的内容这里是简介这幅画的内容这里是简介这幅画的内容</p>
-							<p class="price pt10 clearfix"><strong class="fl red fs40">¥1000</strong><em class="fl white ml20 lh20 mt20">已售：2000件</em></p>
+							<h3 class="fs26 darkblack lh50 ellipsis">${pr.name}</h3>
+							<p class="fs14 lh20 over2">${pr.introduction}</p>
+							<p class="price pt10 clearfix"><strong class="fl red fs40">¥${pr.current}</strong><em class="fl white ml20 lh20 mt20">已售：2000件</em></p>
 						</div>
 						<div class="pro-ctent clearfix">
 							<ul>
-								<li><span>艺 术 家 ：</span>张文标</li>
-								<li><span>尺      寸 ：</span>50×50cm</li>
-								<li><span>价      格 ：</span>2000-3000</li>
-								<li><span>材      质 ：</span>纸本设色</li>
-								<li><span>年      代 ：</span>2015年</li>
+								<li><span>艺 术 家 ：</span>${pr.artist.name}</li>
+								<li><span>尺      寸 ：</span>${pr.size}cm</li>
+								<li><span>价      格 ：</span>${pr.original}</li>
+								<li><span>材      质 ：</span>${pr.texture}</li>
+								<li><span>年      代 ：</span>${pr.byTheTime}</li>
 							</ul>
 						</div>
 						<div class="pt10">
@@ -108,31 +95,15 @@
 					<a class="prev" href="javascript:void(0)"></a>
 					<div class="scrollWrap">
 						<ul class="prolist clearfix">
-							<li>
-								<a href="#" class="db pic"><span><img src="${ctx}/atrs/statics/upload/2.jpg" alt=""/></span></a>
-								<a href="#" class="full-db tit darkblack ellipsis">墙角数枝梅</a>
-								<strong class="full-db red"><em class="fs12">¥</em>65.00</strong>
-							</li>
-							<li>
-								<a href="#" class="db pic"><span><img src="${ctx}/atrs/statics/upload/2.jpg" alt=""/></span></a>
-								<a href="#" class="full-db tit darkblack ellipsis">墙角数枝梅</a>
-								<strong class="full-db red"><em class="fs12">¥</em>65.00</strong>
-							</li>
-							<li>
-								<a href="#" class="db pic"><span><img src="${ctx}/atrs/statics/upload/2.jpg" alt=""/></span></a>
-								<a href="#" class="full-db tit darkblack ellipsis">墙角数枝梅</a>
-								<strong class="full-db red"><em class="fs12">¥</em>65.00</strong>
-							</li>
-							<li>
-								<a href="#" class="db pic"><span><img src="${ctx}/atrs/statics/upload/2.jpg" alt=""/></span></a>
-								<a href="#" class="full-db tit darkblack ellipsis">墙角数枝梅</a>
-								<strong class="full-db red"><em class="fs12">¥</em>65.00</strong>
-							</li>
-							<li>
-								<a href="#" class="db pic"><span><img src="${ctx}/atrs/statics/upload/2.jpg" alt=""/></span></a>
-								<a href="#" class="full-db tit darkblack ellipsis">墙角数枝梅</a>
-								<strong class="full-db red"><em class="fs12">¥</em>65.00</strong>
-							</li>
+							<c:forEach var="pr" items="${list}">
+								<li>
+									<a href="${ctx}/ProductServlet?pid=${pr.id}&ty=commodit" class="db pic"><span ><img src="${ctx}/atrs/statics/files/zuopin/${pr.imagePath}" alt=""/></span></a>
+									<a href="${ctx}/ProductServlet?pid=${pr.id}&ty=commodit" class="full-db tit darkblack ellipsis">${pr.name}</a>
+									<strong class="full-db red"><em class="fs12">¥</em>${pr.current}</strong>
+								</li>
+							</c:forEach>
+
+
 						</ul>
 
 					</div>
@@ -144,22 +115,13 @@
 					<div class="fl pro-likes white-box">
 						<div class="title"><strong class="fs16 white">大家都喜欢</strong></div>
 						<ul class="likelist">
-							<li>
-								<a href="#" class="db pic"><span><img src="${ctx}/atrs/statics/upload/2.jpg" alt=""/></span></a>
-								<a href="#" class="full-db tit darkblack ellipsis">墙角数枝梅</a>
-								<strong class="full-db red"><em class="fs12">¥</em>65.00</strong>
-							</li>
-							<li>
-								<a href="#" class="db pic"><span><img src="${ctx}/atrs/statics/upload/2.jpg" alt=""/></span></a>
-								<a href="#" class="full-db tit darkblack ellipsis">墙角数枝梅</a>
-								<strong class="full-db red"><em class="fs12">¥</em>65.00</strong>
-							</li>
-							<li>
-								<a href="#" class="db pic"><span><img src="${ctx}/atrs/statics/upload/2.jpg" alt=""/></span></a>
-								<a href="#" class="full-db tit darkblack ellipsis">墙角数枝梅</a>
-								<strong class="full-db red"><em class="fs12">¥</em>65.00</strong>
-							</li>
-
+							<c:forEach var="pr" items="${list}" begin="15" end="18">
+								<li>
+									<a href="${ctx}/ProductServlet?pid=${pr.id}&ty=commodit" class="db pic"><span><img src="${ctx}/atrs/statics/files/zuopin/${pr.imagePath}" alt=""/></span></a>
+									<a href="${ctx}/ProductServlet?pid=${pr.id}&ty=commodit" class="full-db tit darkblack ellipsis">${pr.name}</a>
+									<strong class="full-db red"><em class="fs12">¥</em>${pr.current}</strong>
+								</li>
+							</c:forEach>
 						</ul>
 					</div>
 					
@@ -171,8 +133,8 @@
 								</ul>
 						</div>
 						<div class="tab-bd">
-							<div class="tab-pal">
-								<p><img src="${ctx}/atrs/statics/upload/zuopin.jpg" alt="" /></p>
+							<div class="tab-pal" style="size: A3">
+								&nbsp;&nbsp;&nbsp;&nbsp;${pr.details}
 							</div>
 							<div class="tab-pal">
 								<div class="pro-zixun clearfix">

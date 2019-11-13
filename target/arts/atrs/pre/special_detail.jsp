@@ -32,7 +32,7 @@
 			<ul>
 				<li ><a href="${ctx}/atrs/pre/index.jsp">首页</a></li>
 				<li class="cur"><a href="${ctx}/atrs/pre/special.jsp">专场</a></li>
-				<li><a href="mall2.jsp">商城</a></li>
+				<li><a href="${ctx}/ProductServlet?ty=pro">商城</a></li>
 				<li><a href="artist.html">艺术家</a></li>
 			</ul>
 		</div>
@@ -84,7 +84,7 @@
 						<c:forEach var="pr" items="${slist}">
 							<div class="list clearfix transition">
 									<div class="tu clearfix">
-										<img src="${ctx}/atrs/statics/files/zuopin/${pr.imagePath}"/>
+										<a href="${ctx}/ProductServlet?pid=${pr.id}&ty=commodit"><img src="${ctx}/atrs/statics/files/zuopin/${pr.imagePath}"/></a>
 										<span></span>
 
 										<div class="ycang clearfix">
@@ -104,7 +104,7 @@
 										</p>
 										<div class="price clearfix">
 											<span class="fl">￥${pr.current}<samp>原价￥${pr.original}</samp></span>
-											<a href="pro_detail.html" class="goumai fr ra3 transition">立即购买</a>
+											<a href="${ctx}/ProductServlet?pid=${pr.id}&ty=commodit" class="goumai fr ra3 transition">立即购买</a>
 										</div>
 									</div>
 

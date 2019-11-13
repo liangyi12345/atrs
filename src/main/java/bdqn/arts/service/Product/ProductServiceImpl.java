@@ -15,4 +15,12 @@ public class ProductServiceImpl implements ProductService{
         MyBatisUtil.closeSqlSession(sqlSession);
         return session;
     }
+
+    @Override
+    public Product getProduct(Integer id) {
+        SqlSession sqlSession= MyBatisUtil.createSqlSession();
+        Product product = sqlSession.getMapper(ProductMapper.class).getProduct(id);
+        MyBatisUtil.closeSqlSession(sqlSession);
+        return product;
+    }
 }
