@@ -31,18 +31,10 @@
 		<div class="navbar clearfix">
 			<div class="content clearfix">
 				<ul>
-					<li class="cur">
-						<a href="index.html">首页</a>
-					</li>
-					<li>
-						<a href="special.html">专场</a>
-					</li>
-					<li>
-						<a href="mall2.jsp">商城</a>
-					</li>
-					<li>
-						<a href="artist.html">艺术家</a>
-					</li>
+					<li class="cur"><a href="${ctx}/atrs/pre/index.jsp">首页</a></li>
+					<li><a href="${ctx}/sessionServlet?ty=session">专场</a></li>
+					<li ><a href="${ctx}/ProductServlet?ty=pro">商城</a></li>
+					<li><a href="artist.html">艺术家</a></li>
 				</ul>
 			</div>
 		</div>
