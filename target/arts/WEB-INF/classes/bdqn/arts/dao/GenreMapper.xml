@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bdqn.arts.dao.GenreMapper">
+    <select id="select" resultType="bdqn.arts.pojo.Genre">
+SELECT`artist`.`name`,`product`.`name` , `product`.`original`, `product`.`current`, `product`.`size`,`product`.`ImagePath`
+FROM`arts`.`genre`
+INNER JOIN `arts`.`product`  ON (`genre`.`id` = `product`.`gid`)
+INNER JOIN `arts`.`artist` ON (`artist`.`gid` = `product`.`gid`);
+    </select>
+</mapper>
