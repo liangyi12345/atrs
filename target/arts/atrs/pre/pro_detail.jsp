@@ -38,7 +38,7 @@
 						<a href="special.html">专场</a>
 					</li>
 					<li>
-						<a href="mall.html">商城</a>
+						<a href="mall2.jsp">商城</a>
 					</li>
 					<li>
 						<a href="artist.html">艺术家</a>

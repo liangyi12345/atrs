@@ -14,7 +14,7 @@ public class Tist {
         SqlSession sqlSession = MyBatisUtil.createSqlSession();
         List<Product> list = sqlSession.getMapper(ProductMapper.class).seclectAll();
         for (Product p:list) {
-            System.out.println(p.getId());
+            System.out.println(p.getId()+p.getOriginal());
         }
 
     }

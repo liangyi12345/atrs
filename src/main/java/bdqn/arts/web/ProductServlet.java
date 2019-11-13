@@ -17,14 +17,15 @@ import java.util.List;
 public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ProductService pro=new ProductServiceImpl();
-        List<Product> list=pro.seclectAll();
-        for (Product p:list) {
-            System.out.println(p.getAid()+"_---------------------------------");
+        String ty=req.getParameter("ty");
+        if ("pro".equals(ty)) {
+            ProductService pro=new ProductServiceImpl();
+            List<Product> list=pro.seclectAll();
+            HttpSession session=req.getSession();
+            session.setAttribute("list",list);
+            req.getRequestDispatcher("/atrs/pre/mall.jsp").forward(req,resp);
         }
-        HttpSession session=req.getSession();
-        session.setAttribute("list",list);
-        req.getRequestDispatcher("/atrs/pre/mall.jsp").forward(req,resp);
+
     }
 
     @Override
