@@ -21,22 +21,29 @@
 		<link rel="stylesheet" type="text/css" href="${ctx}/atrs/statics/css/base.css" />
 		<script src="${ctx}/atrs/statics/js/jquery-1.8.3.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="${ctx}/atrs/statics/js/jquery.SuperSlide.2.1.js"></script>
+
 	</head>
-	
+
 	<body>
 	<c:import url="${ctx}/atrs/communal/header.jsp"/>
-		
-		<!--navbar star-->
-		<div class="navbar clearfix">
-			<div class="content clearfix">
-				<ul>
-					<li class="cur"><a href="${ctx}/atrs/pre/index.jsp">首页</a></li>
-					<li><a href="${ctx}/sessionServlet">专场</a></li>
-					<li><a href="mall.html">商城</a></li>
-					<li><a href="artist.html">艺术家</a></li>
-				</ul>
-			</div>
+	<div class="navbar clearfix">
+		<div class="content clearfix">
+			<ul>
+				<li class="cur">
+					<a href="${ctx}/atrs/pre/index.jsp">首页</a>
+				</li>
+				<li >
+					<a href="${ctx}/sessionServlet?ty=session">专场</a>
+				</li>
+				<li>
+					<a href="mall.html">商城</a>
+				</li>
+				<li>
+					<a href="artist.html">艺术家</a>
+				</li>
+			</ul>
 		</div>
+	</div>
 		<!--navbar end-->
 		
 		<!--banner star-->
@@ -533,7 +540,7 @@
 			</div>
 		</div>
 		<!--art end-->
-	<C:import url="${ctx}/atrs/communal/footer.jsp"/>
+	<c:import url="${ctx}/atrs/communal/footer.jsp"/>
 		<!--footer end-->
 	</body>
 	<script src="${ctx}/atrs/statics/js/other.js" type="text/javascript" ></script>

@@ -3,6 +3,7 @@
 <%@ taglib prefix="C" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
+
 <html>
 
 	<head>
@@ -24,30 +25,21 @@
 		<script src="${ctx}/atrs/statics/js/jquery-1.8.3.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="${ctx}/atrs/statics/js/jquery.SuperSlide.2.1.js"></script>
 		<script src="${ctx}/atrs/statics/js/common.js"></script>
+		<script type="text/javascript" src="${ctx}/atrs/statics/js/session/session.js"></script>
 	</head>
-
 	<body>
 	<c:import url="${ctx}/atrs/communal/header.jsp"/>
-		<!--navbar star-->
-		<div class="navbar clearfix">
-			<div class="content clearfix">
-				<ul>
-					<li>
-						<a href="${ctx}/atrs/pre/index.jsp">首页</a>
-					</li>
-					<li class="cur">
-						<a href="${ctx}/sessionServlet">专场</a>
-					</li>
-					<li>
-						<a href="mall.html">商城</a>
-					</li>
-					<li>
-						<a href="artist.html">艺术家</a>
-					</li>
-				</ul>
-			</div>
+	<!--navbar star-->
+	<div class="navbar clearfix">
+		<div class="content clearfix">
+			<ul>
+				<li ><a href="${ctx}/atrs/pre/index.jsp">首页</a></li>
+				<li class="cur"><a href="${ctx}/sessionServlet?ty=session">专场</a></li>
+				<li><a href="mall.html">商城</a></li>
+				<li><a href="artist.html">艺术家</a></li>
+			</ul>
 		</div>
-		<!--navbar end-->
+	</div>
 		
 		<!--banner star-->
 		<div class="banner">		
@@ -107,7 +99,7 @@
 
 							</ul>
 						</div>
-						<a href="special_detail.html" class="jinru ra3 transition">
+						<a href="${ctx}/sessionServlet?id=${sess.value.id}&ty=detail" class="jinru ra3 transition">
 							进入专场>
 						</a>
 					</div>
@@ -130,10 +122,10 @@
 					<input type="submit" name="" id="" value="确定">
 				</div>
 			</div>
-
+		</div>
 		<!--specail end-->
 
-	<C:import url="${ctx}/atrs/communal/footer.jsp"/>
+	<c:import url="${ctx}/atrs/communal/footer.jsp"/>
 	</body>
 	<script src="${ctx}/atrs/statics/js/other.js" type="text/javascript" ></script>
 </html>
