@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bdqn.arts.dao.SessionMapper">
+    <resultMap id="session" type="bdqn.arts.pojo.Session">
+        <collection property="slist" ofType="bdqn.arts.pojo.Product">
+            <id property="id" column="pid"/>
+            <result property="name" column="name"/>
+        </collection>
+    </resultMap>
+<select id="ExamineSession" parameterType="int" resultMap="session">
+SELECT * ,p.id as pid FROM  `session` s,`product` p  WHERE p.`sid` =s.id AND s.`id`=#{id}
+</select>
+    <select id="Examine" resultType="bdqn.arts.pojo.Session">
+        SELECT * FROM  `session`
+    </select>
+</mapper>

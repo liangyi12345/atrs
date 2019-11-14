@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bdqn.arts.dao.ProductMapper">
+<select id="seclectAll" resultType="bdqn.arts.pojo.Product">
+SELECT *
+FROM`arts`.`product`;
+</select>
+    <resultMap id="pr" type="bdqn.arts.pojo.Product">
+        <id property="id" column="id"/>
+        <association property="artist" javaType="bdqn.arts.pojo.Artist">
+            <id property="id" column="aid"/>
+            <result property="name" column="aname"/>
+        </association>
+    </resultMap>
+    <select id="getProduct" parameterType="int" resultMap="pr">
+SELECT
+    `artist`.`name` as aname
+    , `artist`.`id` as aid
+    , `product`.`id`
+    , `product`.`name`
+    , `product`.`introduction`
+    , `product`.`details`
+    , `product`.`inventory`
+    , `product`.`original`
+    , `product`.`current`
+    , `product`.`byTheTime`
+    , `product`.`byTheTime`
+    , `product`.`texture`
+    , `product`.`size`
+    , `product`.`ImagePath`
+    , `product`.`dateIssued`
+FROM
+    `arts`.`artist`
+    INNER JOIN `arts`.`product`
+        ON (`artist`.`id` = `product`.`aid` AND `product`.`id` = #{id});
+    </select>
+</mapper>
