@@ -15,10 +15,7 @@ public class Tist {
     public static void main(String[] args) {
         SqlSession sqlSession = MyBatisUtil.createSqlSession();
 
-        List<Artist> list1 = sqlSession.getMapper(ArtistMapper.class).showArtist();
-        for (Artist a:list1){
-            System.out.println(a.getName()+a.getSynopsis());
-        }
+        Session tru = sqlSession.getMapper(SessionMapper.class).ExamineSession(1, "tru", null);
 
     }
 }

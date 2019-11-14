@@ -25,7 +25,7 @@
 		<script src="${ctx}/atrs/statics/js/jquery-1.8.3.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="${ctx}/atrs/statics/js/jquery.SuperSlide.2.1.js"></script>
 		<script src="${ctx}/atrs/statics/js/common.js"></script>
-		<script type="text/javascript" src="${ctx}/atrs/statics/js/session/session.js"></script>
+
 	</head>
 	<body>
 	<c:import url="${ctx}/atrs/communal/header.jsp"/>

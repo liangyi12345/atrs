@@ -70,6 +70,7 @@
 								<li><span>价      格 ：</span>${pr.original}</li>
 								<li><span>材      质 ：</span>${pr.texture}</li>
 								<li><span>年      代 ：</span>${pr.byTheTime}</li>
+								<li><span>  上架时间 ：</span>${pr.dateIssued}</li>
 							</ul>
 						</div>
 						<div class="pt10">

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public interface SessionService {
     //查询专场信息
-   Session ExamineSession(int id);
+   Session ExamineSession(int id,String price,String newproduct);
     ArrayList<Session> Examine();
 
 }

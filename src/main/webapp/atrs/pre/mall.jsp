@@ -155,7 +155,7 @@
 					<!--以下li中添加cur的时候是选中的时候-->
 					<ul>
 						<li>综合排序</li>
-						<li class="xliang cur">销量</li>
+						<li class="xliang cur">价格</li>
 						<li class="xpin">新品</li>
 					</ul>
 				</div>

@@ -7,6 +7,6 @@ import java.util.ArrayList;
 
 public interface SessionMapper {
     //查询专场信息
-        Session ExamineSession(@Param("id")Integer id);
+        Session ExamineSession(@Param("id")Integer id,@Param("price")String price,@Param("newproduct")String newproduct);
         ArrayList<Session> Examine();
 }

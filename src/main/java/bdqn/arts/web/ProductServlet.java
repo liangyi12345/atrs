@@ -35,6 +35,10 @@ public class ProductServlet extends HttpServlet {
             session.setAttribute("list",list);
             req.getRequestDispatcher("/atrs/pre/pro_detail.jsp").forward(req,resp);
         }
+        if ("paix".equals(ty)){
+            String price = req.getParameter("price");
+            String newproduct = req.getParameter("newproduct");
+        }
 
     }
 

@@ -9,8 +9,15 @@
             <result property="name" column="name"/>
         </collection>
     </resultMap>
-<select id="ExamineSession" parameterType="int" resultMap="session">
+<select id="ExamineSession"  resultMap="session">
 SELECT * ,p.id as pid FROM  `session` s,`product` p  WHERE p.`sid` =s.id AND s.`id`=#{id}
+<if test="price == 'tru' ">
+    ORDER BY p.`current` DESC
+</if>
+<if test="newproduct == 'tru'">
+    ORDER BY p.`dateIssued` DESC
+</if>
+
 </select>
     <select id="Examine" resultType="bdqn.arts.pojo.Session">
         SELECT * FROM  `session`
