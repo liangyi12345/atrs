@@ -39,7 +39,7 @@
 					<a href="${ctx}/ProductServlet?ty=pro">商城</a>
 				</li>
 				<li>
-					<a href="${ctx}/ArtistServlet?ty=artis">艺术家</a>
+					<a href="${ctx}/ArtistServlet?ty=ar">艺术家</a>
 				</li>
 			</ul>
 		</div>
