@@ -21,7 +21,7 @@ public class ArtistServlet extends HttpServlet {
         ArtistService artis = new ArtistServicImpl();
         HttpSession session = req.getSession();
         String ty = req.getParameter("ty");
-        if ("artis".equals(ty)){
+        if ("ar".equals(ty)){
             List<Artist> alist =artis.showArtist();
             session.setAttribute("alist",alist);
             req.getRequestDispatcher("/atrs/pre/artist.jsp").forward(req,resp);
