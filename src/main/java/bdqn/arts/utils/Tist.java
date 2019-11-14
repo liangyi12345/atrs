@@ -17,7 +17,7 @@ public class Tist {
 
         List<Artist> list1 = sqlSession.getMapper(ArtistMapper.class).showArtist();
         for (Artist a:list1){
-            System.out.println(a.getName()+a.getSynopsis());
+            System.out.println(a.getName()+"\n"+a.getSynopsis()+"\n"+a.getImagePath());
         }
 
     }
