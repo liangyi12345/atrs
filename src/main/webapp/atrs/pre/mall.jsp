@@ -36,7 +36,7 @@
 					<ul class="clearfix fl">
 						<li>
 							<span class="fl">您好，请</span>
-							<a href="sign.html" class="fl">登录</a>
+							<a href="sign.jsp" class="fl">登录</a>
 						</li>
 						<li>
 							<a href="register.html">

@@ -15,7 +15,6 @@ function log(id) {
     }
 
 function psort(id) {
-    alert("555")
     $.ajax({
         type: "POST",
         url: "/sessionServlet",
@@ -31,7 +30,6 @@ function psort(id) {
     })
 }
 function nsort(id) {
-    alert("555")
     $.ajax({
         type: "POST",
         url: "/sessionServlet",

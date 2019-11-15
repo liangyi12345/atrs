@@ -36,7 +36,7 @@
 					<ul class="clearfix fl">
 						<li>
 							<span class="fl">您好，请</span>
-							<a href="sign.html" class="fl">登录</a>
+							<a href="sign.jsp" class="fl">登录</a>
 						</li>
 						<li>
 							<a href="register.html">
@@ -85,7 +85,7 @@
 			<li><a href="${ctx}/atrs/pre/index.jsp">首页</a></li>
 			<li><a href="${ctx}/sessionServlet?ty=session">专场</a></li>
 			<li class="cur"><a href="${ctx}/ProductServlet?ty=pro">商城</a></li>
-			<li><a href="${ctx}/ArtistServlet?ty=artis">艺术家</a></li>
+			<li><a href="${ctx}/ArtistServlet?ty=ar">艺术家</a></li>
 		</ul>
 	</div>
 </div>
@@ -155,7 +155,7 @@
 					<!--以下li中添加cur的时候是选中的时候-->
 					<ul>
 						<li>综合排序</li>
-						<li class="xliang cur">销量</li>
+						<li class="xliang cur">价格</li>
 						<li class="xpin">新品</li>
 					</ul>
 				</div>
