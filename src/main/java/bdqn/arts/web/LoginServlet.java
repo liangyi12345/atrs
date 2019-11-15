@@ -35,12 +35,15 @@ public class LoginServlet extends HttpServlet {
 
         UserService userService = new UserServiceImpl();
         List<User> userList = userService.getUserList();
+        int flag = 0;
         for (User users : userList) {
             if (users.getName().equals(username) && users.getPassword().equals(password)) {
+                flag = 1;
                 resp.sendRedirect("/atrs/pre/index.jsp");
-            } else {
-                resp.getWriter().println("yonghongmingmimacuowu");
             }
+        }
+        if(flag == 0){
+            resp.sendRedirect("/atrs/pre/sign.jsp");
         }
     }
 }
