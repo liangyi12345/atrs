@@ -11,9 +11,10 @@ import java.util.ArrayList;
 public class SessionServiceImpl implements SessionService {
 
     @Override
-    public Session ExamineSession(int id) {
+    public Session ExamineSession(int id , String price,String newproduct) {
         SqlSession sqlSession = MyBatisUtil.createSqlSession();
-        Session session = sqlSession.getMapper(SessionMapper.class).ExamineSession(id);
+        System.out.println(price+"999999999999999999999999999999999999999999999999999");
+        Session session = sqlSession.getMapper(SessionMapper.class).ExamineSession(id,price,newproduct);
         MyBatisUtil.closeSqlSession(sqlSession);
         return session;
     }

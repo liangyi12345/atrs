@@ -20,25 +20,35 @@ public class SessionServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String ty = req.getParameter("ty");
+        SessionService service = new SessionServiceImpl();
         HttpSession session = req.getSession();
         System.out.println(ty+"*************************************");
         if ("session".equals(ty)){
-            SessionService service = new SessionServiceImpl();
+            String price = req.getParameter("price");
+            String newproduct = req.getParameter("newproduct");
             Map<Integer,Session> smap= new HashMap<>();
             ArrayList<Session> examine = service.Examine();
             for (Session s : examine){
-                smap.put(s.getId(),service.ExamineSession(s.getId()));
+                smap.put(s.getId(),service.ExamineSession(s.getId(),price,newproduct));
             }
             session.setAttribute("smap",smap);
             req.getRequestDispatcher("/atrs/pre/special.jsp").forward(req,resp);
         }
 
         if("detail".equals(ty)){
-            Integer id = Integer.parseInt(req.getParameter("id"));
-            Map<Integer,Session> smap = (Map<Integer,Session>)session.getAttribute("smap");
-            ArrayList<Product> slist = smap.get(id).getSlist();
+           Integer id = Integer.parseInt(req.getParameter("id"));
+            String zonghe = req.getParameter("zonghe");
+            String price = req.getParameter("price");
+            String newproduct = req.getParameter("newproduct");
+            Session se = service.ExamineSession(id, price, newproduct);
+            ArrayList<Product> slist = se.getSlist();
             session.setAttribute("slist",slist);
-            req.getRequestDispatcher("/atrs/pre/special_detail.jsp").forward(req,resp);
+            if (zonghe!=null || price != null || newproduct != null){
+                req.getRequestDispatcher("/atrs/communal/shangp.jsp").forward(req,resp);
+            }else {
+                req.getRequestDispatcher("/atrs/pre/special_detail.jsp").forward(req,resp);
+            }
+
         }
 
     }

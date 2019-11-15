@@ -34,7 +34,7 @@
 					<li class="cur"><a href="${ctx}/atrs/pre/index.jsp">首页</a></li>
 					<li><a href="${ctx}/sessionServlet?ty=session">专场</a></li>
 					<li ><a href="${ctx}/ProductServlet?ty=pro">商城</a></li>
-					<li><a href="artist.html">艺术家</a></li>
+					<li><a href="${ctx}/ArtistServlet?ty=artis">艺术家</a></li>
 				</ul>
 			</div>
 		</div>
@@ -70,6 +70,7 @@
 								<li><span>价      格 ：</span>${pr.original}</li>
 								<li><span>材      质 ：</span>${pr.texture}</li>
 								<li><span>年      代 ：</span>${pr.byTheTime}</li>
+								<li><span>  上架时间 ：</span>${pr.dateIssued}</li>
 							</ul>
 						</div>
 						<div class="pt10">

@@ -1,7 +1,9 @@
 package bdqn.arts.utils;
 
+import bdqn.arts.dao.ArtistMapper;
 import bdqn.arts.dao.ProductMapper;
 import bdqn.arts.dao.SessionMapper;
+import bdqn.arts.pojo.Artist;
 import bdqn.arts.pojo.Product;
 import bdqn.arts.pojo.Session;
 import org.apache.ibatis.session.SqlSession;
@@ -13,12 +15,7 @@ public class Tist {
     public static void main(String[] args) {
         SqlSession sqlSession = MyBatisUtil.createSqlSession();
 
-        List<Product> list = sqlSession.getMapper(ProductMapper.class).seclectAll();
-        for (Product p : list) {
-            System.out.println(p.getId() + p.getOriginal());
-
-
-        }
+        Session tru = sqlSession.getMapper(SessionMapper.class).ExamineSession(1, "tru", null);
 
     }
 }
