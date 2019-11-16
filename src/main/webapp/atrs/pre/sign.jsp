@@ -18,13 +18,13 @@
 </head>
 
 <body>
-<form name="registerFrm" id="registerFrm" action="/login" method="get">
+<form name="registerFrm" id="registerFrm" action="/login" method="post">
 <div class="sign clearfix">
     <div class="top clearfix">
-        <a href="index.html" class="fl fanhui">返回首页</a>
+        <a href="${ctx}/atrs/pre/index.jsp" class="fl fanhui">返回首页</a>
         <p class="fr">
             还没有商城账号？
-            <a href="register.html" class="zhuce ra3">
+            <a href="${ctx}/atrs/pre/register.jsp" class="zhuce ra3">
                 注册
             </a>
         </p>
