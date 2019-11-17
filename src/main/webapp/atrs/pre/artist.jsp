@@ -63,7 +63,7 @@
 									<li class="">版画</li>
 									<li class="">雕塑</li>
 								</ul>
-								<a href="settled.html" class="shenqin fr">申请签约入驻</a>
+								<a href="settled.jsp" class="shenqin fr">申请签约入驻</a>
 							</div>
 						</div>
 						<div class="ywlist clearfix fl" id="float">

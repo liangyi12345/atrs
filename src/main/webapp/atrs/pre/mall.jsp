@@ -44,7 +44,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="settled.html">
+							<a href="settled.jsp">
 								艺术家入驻
 							</a>
 						</li>

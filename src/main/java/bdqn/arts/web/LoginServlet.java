@@ -5,6 +5,7 @@ import bdqn.arts.service.user.UserService;
 import bdqn.arts.service.user.UserServiceImpl;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,6 +20,8 @@ import java.util.List;
  * @Date:2019/11/15 22:37
  * @author:guoxin@bjpowernode.com
  */
+@WebServlet(urlPatterns={"/login"},name = "login")
+
 public class LoginServlet extends HttpServlet {
 
     @Override
