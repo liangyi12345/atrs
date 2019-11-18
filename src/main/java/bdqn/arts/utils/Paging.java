@@ -9,6 +9,16 @@ public class Paging {
     private Integer pageTotal;
     //当前页码
     private Integer currentPage;
+    //开始条数
+    private Integer begin;
+
+    public Integer getBegin() {
+        return begin;
+    }
+
+    public void setBegin(Integer begin) {
+        this.begin = begin;
+    }
 
     public Integer getPageCount() {
         return pageCount;
@@ -41,5 +51,16 @@ public class Paging {
 
     public void setCurrentPage(Integer currentPage) {
             this.currentPage = currentPage;
+    }
+
+    @Override
+    public String toString() {
+        return "Paging{" +
+                "pageCount=" + pageCount +
+                ", pageSize=" + pageSize +
+                ", pageTotal=" + pageTotal +
+                ", currentPage=" + currentPage +
+                ", begin=" + begin +
+                '}';
     }
 }

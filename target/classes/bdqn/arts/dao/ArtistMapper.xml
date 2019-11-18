@@ -3,7 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="bdqn.arts.dao.ArtistMapper">
-  <select id="showArtist" resultType="bdqn.arts.pojo.Artist">
+    <select id="showArtist" resultType="bdqn.arts.pojo.Artist">
       select * from artist
   </select>
+
 </mapper>

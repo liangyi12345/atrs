@@ -4,6 +4,7 @@ import bdqn.arts.dao.SessionMapper;
 import bdqn.arts.pojo.Session;
 import bdqn.arts.service.session.SessionService;
 import bdqn.arts.utils.MyBatisUtil;
+import bdqn.arts.utils.Paging;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.ArrayList;
@@ -11,10 +12,9 @@ import java.util.ArrayList;
 public class SessionServiceImpl implements SessionService {
 
     @Override
-    public Session ExamineSession(int id , String price,String newproduct) {
+    public Session ExamineSession(int id , String price, String newproduct, Paging paging) {
         SqlSession sqlSession = MyBatisUtil.createSqlSession();
-        System.out.println(price+"999999999999999999999999999999999999999999999999999");
-        Session session = sqlSession.getMapper(SessionMapper.class).ExamineSession(id,price,newproduct);
+        Session session = sqlSession.getMapper(SessionMapper.class).ExamineSession(id,price,newproduct,paging);
         MyBatisUtil.closeSqlSession(sqlSession);
         return session;
     }
@@ -23,5 +23,13 @@ public class SessionServiceImpl implements SessionService {
         ArrayList<Session> sessions = sqlSession.getMapper(SessionMapper.class).Examine();
         MyBatisUtil.closeSqlSession(sqlSession);
         return sessions;
+    }
+
+    @Override
+    public Integer getSessionPro(Integer id, String price, String newproduct) {
+        SqlSession sqlSession = MyBatisUtil.createSqlSession();
+        Integer count = sqlSession.getMapper(SessionMapper.class).getSessionPro(id, price, newproduct);
+        MyBatisUtil.closeSqlSession(sqlSession);
+        return count;
     }
 }

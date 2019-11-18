@@ -5,7 +5,7 @@
 <mapper namespace="bdqn.arts.dao.ProductMapper">
 <select id="seclectAll" resultType="bdqn.arts.pojo.Product">
 SELECT *
-FROM`arts`.`product`;
+FROM`arts`.`product` LIMIT #{paging.begin},#{paging.pageSize};
 </select>
     <resultMap id="pr" type="bdqn.arts.pojo.Product">
         <id property="id" column="id"/>
@@ -34,6 +34,14 @@ SELECT
 FROM
     `arts`.`artist`
     INNER JOIN `arts`.`product`
-        ON (`artist`.`id` = `product`.`aid` AND `product`.`id` = #{id});
+        ON (`artist`.`id` = `product`.`aid` AND `product`.`id` = #{id}) ;
+    </select>
+    <select id="getCount" resultType="int">
+        SELECT COUNT(id)
+        FROM`arts`.`product` ;
+    </select>
+    <select id="getPro" resultType="bdqn.arts.pojo.Product">
+        SELECT *
+        FROM`arts`.`product` ;
     </select>
 </mapper>

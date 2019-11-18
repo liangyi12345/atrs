@@ -25,6 +25,7 @@
 		<script src="${ctx}/atrs/statics/js/jquery-1.8.3.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="${ctx}/atrs/statics/js/jquery.SuperSlide.2.1.js"></script>
 		<script src="${ctx}/atrs/statics/js/common.js"></script>
+		<script type="text/javascript" src="${ctx}/atrs/statics/js/jquery-1.8.3.min.js"></script>
 
 	</head>
 	<body>
@@ -35,8 +36,8 @@
 			<ul>
 				<li ><a href="${ctx}/atrs/pre/index.jsp">首页</a></li>
 				<li class="cur"><a href="${ctx}/sessionServlet?ty=session">专场</a></li>
-				<li><a href="${ctx}/ProductServlet?ty=pro">商城</a></li>
-				<li><a href="${ctx}/ArtistServlet?ty=artis">艺术家</a></li>
+				<li><a href="${ctx}/atrs/pre/mall.jsp">商城</a></li>
+				<li><a href="${ctx}/ArtistServlet?ty=ar">艺术家</a></li>
 			</ul>
 		</div>
 	</div>
@@ -105,25 +106,8 @@
 					</div>
 				</div>
 
-
 			</div>
 			</C:forEach>
-			<div class="pages clearfix">
-				<div class="page clearfix ta-right fl">
-					<a href="#" class="pre box-s">上一页</a>
-					<a href="#">1</a>
-					<a href="#">2</a>
-					<a href="#">3</a>
-					<span>...</span>
-					<a href="#" class="next box-s">下一页</a>
-					<span class="ml10">到第</span>
-					<input type="" name="" id="" value="">
-					<span>页</span>
-					<input type="submit" name="" id="" value="确定">
-				</div>
-			</div>
-		</div>
-		<!--specail end-->
 
 	<c:import url="${ctx}/atrs/communal/footer.jsp"/>
 	</body>

@@ -3,17 +3,26 @@ package bdqn.arts.service.Product;
 import bdqn.arts.dao.ProductMapper;
 import bdqn.arts.pojo.Product;
 import bdqn.arts.utils.MyBatisUtil;
+import bdqn.arts.utils.Paging;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
 
 public class ProductServiceImpl implements ProductService{
     @Override
-    public List<Product> seclectAll() {
+    public Integer getCount() {
         SqlSession sqlSession= MyBatisUtil.createSqlSession();
-        List<Product> session=sqlSession.getMapper(ProductMapper.class).seclectAll();
+        Integer count = sqlSession.getMapper(ProductMapper.class).getCount();
         MyBatisUtil.closeSqlSession(sqlSession);
-        return session;
+        return count;
+    }
+
+    @Override
+    public List<Product> seclectAll(Paging paging) {
+        SqlSession sqlSession= MyBatisUtil.createSqlSession();
+        List<Product> list=sqlSession.getMapper(ProductMapper.class).seclectAll(paging);
+        MyBatisUtil.closeSqlSession(sqlSession);
+        return list;
     }
 
     @Override
@@ -22,5 +31,13 @@ public class ProductServiceImpl implements ProductService{
         Product product = sqlSession.getMapper(ProductMapper.class).getProduct(id);
         MyBatisUtil.closeSqlSession(sqlSession);
         return product;
+    }
+
+    @Override
+    public List<Product> getPro() {
+        SqlSession sqlSession= MyBatisUtil.createSqlSession();
+        List<Product> list=sqlSession.getMapper(ProductMapper.class).getPro();
+        MyBatisUtil.closeSqlSession(sqlSession);
+        return list;
     }
 }

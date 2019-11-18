@@ -17,9 +17,23 @@ SELECT * ,p.id as pid FROM  `session` s,`product` p  WHERE p.`sid` =s.id AND s.`
 <if test="newproduct == 'tru'">
     ORDER BY p.`dateIssued` DESC
 </if>
+<if test="paging != null">
+    LIMIT #{paging.begin},#{paging.pageSize}
+</if>
 
 </select>
     <select id="Examine" resultType="bdqn.arts.pojo.Session">
         SELECT * FROM  `session`
+    </select>
+
+    <select id="getSessionPro" resultType="int">
+        SELECT count(p.id) FROM  `session` s,`product` p  WHERE p.`sid` =s.id AND s.`id`=#{id}
+        <if test="price == 'tru' ">
+            ORDER BY p.`current` DESC
+        </if>
+        <if test="newproduct == 'tru'">
+            ORDER BY p.`dateIssued` DESC
+        </if>
+
     </select>
 </mapper>
