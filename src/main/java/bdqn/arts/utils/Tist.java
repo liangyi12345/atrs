@@ -14,8 +14,18 @@ import java.util.List;
 public class Tist {
     public static void main(String[] args) {
         SqlSession sqlSession = MyBatisUtil.createSqlSession();
+        Paging paging = new Paging();
+        paging.setCurrentPage(2);
+        paging.setPageSize(3);
+        paging.setPageTotal(10);
+        paging.setPageCount(1);
+        paging.setBegin(3);
+        Session session = sqlSession.getMapper(SessionMapper.class).ExamineSession(1, "tru", null, paging);
 
-        Session tru = sqlSession.getMapper(SessionMapper.class).ExamineSession(1, "tru", null);
+        for (Product p :session.getSlist() ) {
+            System.out.println(p.getName());
+        }
+
 
     }
 }

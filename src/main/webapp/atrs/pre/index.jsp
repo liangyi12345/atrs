@@ -36,7 +36,7 @@
 					<a href="${ctx}/sessionServlet?ty=session">专场</a>
 				</li>
 				<li>
-					<a href="${ctx}/ProductServlet?ty=pro">商城</a>
+					<a href="${ctx}/atrs/pre/mall.jsp">商城</a>
 				</li>
 				<li>
 					<a href="${ctx}/ArtistServlet?ty=ar">艺术家</a>

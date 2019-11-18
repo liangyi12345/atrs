@@ -13,12 +13,13 @@
     <title>Title</title>
 </head>
 <body>
-<c:forEach var="pr" items="${slist}">
+<div class="bottom clearfix">
+    <input id="currentPage" type="hidden" value="${paging.currentPage}">
+    <c:forEach var="pr" items="${slist}">
     <div class="list clearfix transition">
         <div class="tu clearfix">
             <a href="${ctx}/ProductServlet?pid=${pr.id}&ty=commodit"><img src="${ctx}/atrs/statics/files/zuopin/${pr.imagePath}"/></a>
             <span></span>
-
             <div class="ycang clearfix">
                 <samp class="opa8"></samp>
                 <div class="nr clearfix">
@@ -42,5 +43,23 @@
 
     </div>
 </c:forEach>
+</div>
+<div class="page clearfix ta-right">
+    <input id="currentPage" type="hidden" value="${paging.currentPage}">
+<c:if test="${paging.currentPage>0}">
+    <a onclick="shang()" class="pre box-s">上一页</a>
+    </c:if>
+    <c:forEach var="i" begin="1" end="${paging.pageCount}" >
+    <a onclick="tiao1(${i})">${i}</a>
+    </c:forEach>
+    <c:if test="${paging.currentPage<paging.pageCount}">
+    <a onclick="xia()" class="next box-s">下一页</a>
+    </c:if>
+
+    <span class="ml10">到第</span>
+    <input type="text"  id="tiao" value="" />
+    <span>页</span>
+    <input type="submit" name="" id="" value="确定" onclick="tiao(${paging.pageCount})" />
+
 </body>
 </html>

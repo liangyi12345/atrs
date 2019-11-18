@@ -33,7 +33,7 @@
 			<ul>
 				<li ><a href="${ctx}/atrs/pre/index.jsp">首页</a></li>
 				<li class="cur"><a href="${ctx}/atrs/pre/special.jsp">专场</a></li>
-				<li><a href="${ctx}/ProductServlet?ty=pro">商城</a></li>
+				<li><a href="${ctx}/atrs/pre/mall.jsp">商城</a></li>
 				<li><a href="${ctx}/ArtistServlet?ty=ar">艺术家</a></li>
 			</ul>
 		</div>
@@ -85,34 +85,17 @@
 							</ul>
 						</div>
 					</div>
-					<div class="bottom clearfix">
+
 						<div id="shangp">
 
-
-
-						</div>
-
 						</div>
 					</div>
-					<div class="page clearfix ta-right">
-						<a href="#" class="pre box-s">上一页</a>
-						<a href="#">1</a>
-						<a href="#">2</a>
-						<a href="#">3</a>
-						<span>...</span>
-						<a href="#" class="next box-s">下一页</a>
-						<span class="ml10">到第</span>
-						<input type="" name="" id="" value="" />
-						<span>页</span>
-						<input type="submit" name="" id="" value="确定" />
-					</div>
+
 				</div>
 			</div>
 			<!--sales end-->
 
 		<!--mall end-->
-
-
 	<c:import url="${ctx}/atrs/communal/footer.jsp"/>
 	</body>
 	<script src="${ctx}/atrs/statics/js/other.js" type="text/javascript" ></script>

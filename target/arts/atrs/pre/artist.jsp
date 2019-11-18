@@ -4,12 +4,12 @@
 <!DOCTYPE html>
 <html>
 
-	<	<head>
+		<head>
 		<meta name="renderer" content="webkit|ie-comp|ie-stand">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta charset='utf-8'>
 		<meta http-equiv="Cache-Control" content="no-siteapp" />
-		<title>首页</title>
+		<title>艺术家</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta http-equiv="Cache-Control" content="no-siteapp">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +35,7 @@
 				<ul>
 					<li><a href="${ctx}/atrs/pre/index.jsp">首页</a></li>
 					<li><a href="${ctx}/sessionServlet?ty=session">专场</a></li>
-					<li><a href="${ctx}/ProductServlet?ty=pro">商城</a></li>
+					<li><a href="${ctx}/atrs/pre/mall.jsp">商城</a></li>
 					<li class="cur"><a href="${ctx}/ArtistServlet?ty=ar">艺术家</a></li>
 				</ul>
 			</div>
@@ -104,33 +104,36 @@
 			<!--sorts end-->
 			
 			<!--artist star-->
+
 			<div class="artist clearfix">
 				<div class="content clearfix">
 					<div class="artist-top clearfix">
 						<span>全部艺术家</span>
 					</div>
+					<c:forEach var="alist" items="${alist}" >
 					<div class="artist-bottom clearfix">
 						<div class="list clearfix fl">
 							<div class="left clearfix fl box-s">
 								<div class="tu clearfix">
-									<c:forEach var="alist" items="${alist}" >
+
 									<img src="${ctx}/atrs/statics/files/touxiang/${alist.imagePath}"/>
 									<span></span>
-									</c:forEach>
+
 								</div>
 							</div>
 							<div class="right clearfix fl">
-								<span class="tit">艺术家：${alist.value.name}</span>
+								<span class="tit">艺术家：${alist.name}</span>
 								<div class="bottom clearfix box-s fl over4">
-									${alist.value.synopsis}
+									${alist.synopsis}
 								</div>
 							</div>
-							<a href="artist-detail.html" class="ck-btn ra3 transition">
+							<a href="artist-detail.jsp" class="ck-btn ra3 transition">
 								查看详情>>
 							</a>
 						</div>
 
 					</div>
+					</c:forEach>
 					<div class="page clearfix ta-right fl mt25">
 						<a href="#" class="pre box-s">上一页</a>
 						<a href="#">1</a>
