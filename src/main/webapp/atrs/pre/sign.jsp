@@ -18,7 +18,7 @@
 </head>
 
 <body>
-<form name="registerFrm" id="registerFrm" action="/login" method="post">
+<form name="registerFrm" id="registerFrm" action="${ctx}/login" method="post">
 <div class="sign clearfix">
     <div class="top clearfix">
         <a href="${ctx}/atrs/pre/index.jsp" class="fl fanhui">返回首页</a>
