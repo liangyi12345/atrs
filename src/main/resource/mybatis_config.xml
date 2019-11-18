@@ -22,6 +22,7 @@
     <mapper resource="bdqn/arts/dao/GenreMapper.xml"/>
     <mapper resource="bdqn/arts/dao/ProductMapper.xml"/>
     <mapper resource="bdqn/arts/dao/ArtistMapper.xml"/>
+    <mapper resource="bdqn/arts/dao/UserMapper.xml"/>
 </mappers>
 
 </configuration>
