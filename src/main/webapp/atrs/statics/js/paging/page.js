@@ -75,12 +75,6 @@ function tiao1(i) {
 
 
 
-
-
-
-
-
-
 function load() {
     $.ajax({
         type: "post",

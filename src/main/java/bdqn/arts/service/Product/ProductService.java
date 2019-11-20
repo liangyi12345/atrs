@@ -15,4 +15,6 @@ public interface ProductService {
     Product getProduct(@Param("id")Integer id);
     //查询所有商品信息
     public List<Product> getPro();
+    //分类查询商品
+    public List<Product> selectNews(@Param("gid") Integer gid,@Param("size") Integer size,@Param("current") Double current,Paging paging);
 }
