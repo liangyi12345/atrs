@@ -6,9 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="atrs1" />
         <module name="arts" />
+        <module name="atrs1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="arts" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
