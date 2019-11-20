@@ -86,7 +86,7 @@ function load() {
         type: "post",
         url: "/ProductServlet",
         data: {
-            ty:"pro",
+            ty:"pro"
         },
         dataType : "html",
         success :function(data){
