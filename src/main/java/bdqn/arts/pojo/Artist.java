@@ -3,6 +3,9 @@ package bdqn.arts.pojo;
 艺术家信息表
  */
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Artist {
 
   private Integer id;
@@ -18,7 +21,24 @@ public class Artist {
   private Integer visit;
   private Integer attention;
   private Integer uid;
+  private User user;
+  private List<Product> alist;
 
+  public List<Product> getAlist() {
+    return alist;
+  }
+
+  public void setAlist(List<Product> alist) {
+    this.alist = alist;
+  }
+
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
+  }
 
   public Integer getId() {
     return id;
@@ -136,4 +156,24 @@ public class Artist {
     this.uid = uid;
   }
 
+  @Override
+  public String toString() {
+    return "Artist{" +
+            "id=" + id +
+            ", gid=" + gid +
+            ", name='" + name + '\'' +
+            ", phone='" + phone + '\'' +
+            ", email='" + email + '\'' +
+            ", address='" + address + '\'' +
+            ", school='" + school + '\'' +
+            ", synopsis='" + synopsis + '\'' +
+            ", nationality='" + nationality + '\'' +
+            ", imagePath='" + imagePath + '\'' +
+            ", visit=" + visit +
+            ", attention=" + attention +
+            ", uid=" + uid +
+            ", user=" + user +
+            ", alist=" + alist +
+            '}';
+  }
 }

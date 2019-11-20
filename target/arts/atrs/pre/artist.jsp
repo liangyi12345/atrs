@@ -110,7 +110,7 @@
 					<div class="artist-top clearfix">
 						<span>全部艺术家</span>
 					</div>
-					<c:forEach var="alist" items="${alist}" >
+					<c:forEach var="alist" items="${amap}" >
 					<div class="artist-bottom clearfix">
 						<div class="list clearfix fl">
 							<div class="left clearfix fl box-s">
@@ -127,9 +127,11 @@
 									${alist.synopsis}
 								</div>
 							</div>
-							<a href="artist-detail.jsp" class="ck-btn ra3 transition">
+
+							<a href="${ctx}/ArtistServlet?id=${alist.id}&ty=adetail" class="ck-btn ra3 transition">
 								查看详情>>
 							</a>
+
 						</div>
 
 					</div>
