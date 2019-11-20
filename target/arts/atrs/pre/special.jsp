@@ -69,6 +69,7 @@
 					</p>
 				</div>
 			</div>
+
 			<C:forEach var="sess" items="${smap}">
 			<div class="content clearfix box-s">
 				<div class="list clearfix fl box-s transition">
@@ -107,8 +108,9 @@
 				</div>
 
 			</div>
-			</C:forEach>
 
+			</C:forEach>
+		</div>
 	<c:import url="${ctx}/atrs/communal/footer.jsp"/>
 	</body>
 	<script src="${ctx}/atrs/statics/js/other.js" type="text/javascript" ></script>
