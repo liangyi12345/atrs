@@ -6,6 +6,7 @@ import bdqn.arts.dao.SessionMapper;
 import bdqn.arts.pojo.Artist;
 import bdqn.arts.pojo.Product;
 import bdqn.arts.pojo.Session;
+import com.mysql.fabric.xmlrpc.base.Param;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.List;
 
 public class Tist {
     public static void main(String[] args) {
+
   /*      SqlSession sqlSession = MyBatisUtil.createSqlSession();
         Paging paging = new Paging();
         paging.setCurrentPage(2);
@@ -33,7 +35,5 @@ public class Tist {
         for (Product P:list) {
             System.out.println(P.getCurrent());
         }
-
-
     }
 }

@@ -30,9 +30,7 @@ function fenlei2() {
         success:function (data) {
             alert("+++")
             $("#page").html(data)
-            load()
-        },
-        error:alert("999999")
+        }
     })
 }
 
