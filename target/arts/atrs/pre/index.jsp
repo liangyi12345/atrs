@@ -238,10 +238,11 @@
 											</div>
 											<div class="xia clearfix">
 												<p>
-														${list.synopsis}
 													<a href="${ctx}/ArtistServlet?id=${list.id}&ty=adetail" class="more">
-														查看更多&gt;&gt;
+														查看更多————&gt;&gt;
 													</a>
+														${list.synopsis}
+
 												</p>
 											</div>
 										</div>

@@ -30,4 +30,7 @@
     <select id="getArtistge" resultType="int">
         SELECT COUNT(p.id) FROM `artist` a,`product` p  WHERE p.`aid` =a.id AND a.`id`=#{id}
     </select>
+    <select id="getclassify" resultType="bdqn.arts.pojo.Artist">
+        SELECT a.`name`,a.`synopsis`,a.`imagePath` FROM `genre` g,`artist` a WHERE a.`gid`=g.`id` AND g.`id`=#{id}
+    </select>
 </mapper>
