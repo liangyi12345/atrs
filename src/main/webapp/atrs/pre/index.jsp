@@ -36,10 +36,10 @@
 				<a href="${ctx}/sessionServlet?ty=session">专场</a>
 			</li>
 			<li>
-				<a href="${ctx}/ProductServlet?ty=pro">商城</a>
+				<a href="${ctx}/atrs/pre/mall.jsp">商城</a>
 			</li>
 			<li>
-				<a href="artist.html">艺术家</a>
+				<a href="${ctx}/ArtistServlet?ty=ar">艺术家</a>
 			</li>
 		</ul>
 	</div>
@@ -239,7 +239,7 @@
 											<div class="xia clearfix">
 												<p>
 														${list.synopsis}
-													<a href="#" class="more">
+													<a href="${ctx}/ArtistServlet?id=${list.id}&ty=adetail" class="more">
 														查看更多&gt;&gt;
 													</a>
 												</p>

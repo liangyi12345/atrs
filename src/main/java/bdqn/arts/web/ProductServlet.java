@@ -68,9 +68,9 @@ public class ProductServlet extends HttpServlet {
                 System.out.println(product.getGid());
             }
             session.setAttribute("paging",paging);
+            System.out.println(paging);
             session.setAttribute("list",list);
             req.getRequestDispatcher("/atrs/communal/page.jsp").forward(req,resp);
-            System.out.println("***************************************");
         }
 
 

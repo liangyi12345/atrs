@@ -1,5 +1,4 @@
 function fenlei1() {
-    alert("*****")
     var gid=$("#shuhua").val();
     gid=parseInt(gid);
     $.ajax({
@@ -11,7 +10,6 @@ function fenlei1() {
         },
         dataType:"html",
         success:function (data) {
-        alert("*****")
             $("#page").html(data)
         }
     })
