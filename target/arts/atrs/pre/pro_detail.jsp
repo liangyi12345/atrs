@@ -67,7 +67,7 @@
 							<ul>
 								<li><span>艺 术 家 ：</span>${pr.artist.name}</li>
 								<li><span>尺      寸 ：</span>${pr.size}cm</li>
-								<li><span>价      格 ：</span>${pr.original}</li>
+								<li><span>原      价 ：</span>${pr.original}</li>
 								<li><span>材      质 ：</span>${pr.texture}</li>
 								<li><span>年      代 ：</span>${pr.byTheTime}</li>
 								<li><span>  上架时间 ：</span>${pr.dateIssued}</li>

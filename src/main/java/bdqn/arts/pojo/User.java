@@ -10,7 +10,7 @@ public class User {
   private Integer id;
   private String name;
   private String password;
-  private Date birthday;
+  private String birthday;
   private Integer sex;
   private Integer type;
   private String address;
@@ -43,11 +43,11 @@ public class User {
     this.password = password;
   }
 
-  public Date getBirthday() {
+  public String getBirthday() {
     return birthday;
   }
 
-  public void setBirthday(Date birthday) {
+  public void setBirthday(String birthday) {
     this.birthday = birthday;
   }
 
@@ -89,7 +89,7 @@ public class User {
             "id=" + id +
             ", name='" + name + '\'' +
             ", password='" + password + '\'' +
-            ", birthday=" + birthday +
+            ", birthday='" + birthday + '\'' +
             ", sex=" + sex +
             ", type=" + type +
             ", address='" + address + '\'' +
