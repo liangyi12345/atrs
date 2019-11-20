@@ -57,7 +57,7 @@
 					</p>
 					<div class="right clearfix fl">
 						<ul>
-							<li class="cur">不限</li>
+							<li class="cur"onclick="fenlei()" value="0">不限</li>
 							<li class="" id="shuhua" onclick="fenlei1()" value="1">书画</li>
 							<li class="" id="youhau" onclick="fenlei2()" value="2">油画</li>
 							<li class="" id="banhua" onclick="fenlei3()" value="3">版画</li>
@@ -68,10 +68,10 @@
 				<div class="list clearfix fl">
 					<p class="bt fl">
 						尺寸：
-					</p>
+					</p>.
 					<div class="right clearfix fl">
 						<ul>
-							<li class="cur">不限</li>
+							<li class="cur" onclick="fenlei01()">不限</li>
 							<li id="cicun1" onclick="fenlei5()" value="60">小于60cm</li>
 							<li id="cicun2" onclick="fenlei6()" value="150">小于150cm</li>
 							<li id="cicun3" onclick="fenlei7()" value="200">小于200cm</li>
@@ -84,10 +84,10 @@
 					</p>
 					<div class="right clearfix fl">
 						<ul>
-							<li class="cur">不限</li>
-							<li>0-2000元</li>
-							<li>2000-5000元</li>
-							<li>5000元以上</li>
+							<li class="cur" onclick="fenlei02()">不限</li>
+							<li id="money1" value="5000" onclick="fenlei8()">小于10000元</li>
+							<li id="money2" value="10000" onclick="fenlei9()">小于30000元</li>
+							<li id="money3" value="30000" onclick="fenlei10()">30000元以上</li>
 						</ul>
 					</div>
 				</div>

@@ -37,7 +37,7 @@
                     ${list.name}
             </p>
             <div class="price clearfix">
-                <span class="fl">￥${list.original}<samp>原价￥${list.current}</samp></span>
+                <span class="fl">￥${list.current}<samp>原价￥${list.original}</samp></span>
                 <a href="${ctx}/ProductServlet?pid=${list.id}&ty=commodit" class="goumai fr ra3 transition">立即购买</a>
             </div>
         </div>

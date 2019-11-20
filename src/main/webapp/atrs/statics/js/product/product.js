@@ -1,3 +1,47 @@
+function fenlei() {
+    $.ajax({
+        type:"post",
+        url: "/ProductServlet",
+        data:{
+            ty:"pro",
+            gid:0
+        },
+        dataType:"html",
+        success:function (data) {
+            $("#page").html(data)
+        }
+    })
+}
+function fenlei01() {
+    $.ajax({
+        type:"post",
+        url: "/ProductServlet",
+        data:{
+            ty:"pro",
+            size:0
+        },
+        dataType:"html",
+        success:function (data) {
+            $("#page").html(data)
+        }
+    })
+}
+function fenlei02() {
+    $.ajax({
+        type:"post",
+        url: "/ProductServlet",
+        data:{
+            ty:"pro",
+            current:0.0
+        },
+        dataType:"html",
+        success:function (data) {
+            $("#page").html(data)
+        }
+    })
+}
+
+
 function fenlei1() {
     var gid=$("#shuhua").val();
     gid=parseInt(gid);
@@ -26,7 +70,6 @@ function fenlei2() {
         },
         dataType:"html",
         success:function (data) {
-            alert("+++")
             $("#page").html(data)
         }
     })
@@ -73,7 +116,7 @@ function fenlei5() {
         url: "/ProductServlet",
         data:{
             ty:"pro",
-            gid:size
+            size:size
         },
         dataType:"html",
         success:function (data) {
@@ -89,7 +132,7 @@ function fenlei6() {
         url: "/ProductServlet",
         data:{
             ty:"pro",
-            gid:size
+            size:size
         },
         dataType:"html",
         success:function (data) {
@@ -105,7 +148,52 @@ function fenlei7() {
         url: "/ProductServlet",
         data:{
             ty:"pro",
-            gid:size
+            size:size
+        },
+        dataType:"html",
+        success:function (data) {
+            $("#page").html(data)
+        }
+    })
+}
+function fenlei8() {
+    var current=$("#money1").val();
+    $.ajax({
+        type:"post",
+        url: "/ProductServlet",
+        data:{
+            ty:"pro",
+            current:current
+        },
+        dataType:"html",
+        success:function (data) {
+            $("#page").html(data)
+        }
+    })
+}
+function fenlei9() {
+    var current=$("#money2").val();
+    $.ajax({
+        type:"post",
+        url: "/ProductServlet",
+        data:{
+            ty:"pro",
+            current:current
+        },
+        dataType:"html",
+        success:function (data) {
+            $("#page").html(data)
+        }
+    })
+}
+function fenlei10() {
+    var current=$("#money3").val();
+    $.ajax({
+        type:"post",
+        url: "/ProductServlet",
+        data:{
+            ty:"pro",
+            current:current
         },
         dataType:"html",
         success:function (data) {

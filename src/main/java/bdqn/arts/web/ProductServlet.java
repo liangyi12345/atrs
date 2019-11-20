@@ -57,20 +57,22 @@ public class ProductServlet extends HttpServlet {
             if ( newgid!= null) {
                gid = Integer.parseInt(newgid);
             }
-            if (newsize!=null) {
+            if (newsize!= null) {
                 size=Integer.parseInt(newsize);
             }
-            if (newcurrent!=null) {
+            if (newcurrent!= null) {
                 current=Double.parseDouble(newcurrent);
             }
+            /*System.out.println(gid+"33333333333333333333333");
+            System.out.println(size+"99999999999999999999999999");*/
             List<Product> list=pro.selectNews(gid,size,current,paging);
             for (Product product:list) {
                 System.out.println(product.getGid());
             }
             session.setAttribute("paging",paging);
-            System.out.println(paging);
             session.setAttribute("list",list);
             req.getRequestDispatcher("/atrs/communal/page.jsp").forward(req,resp);
+
         }
 
 
