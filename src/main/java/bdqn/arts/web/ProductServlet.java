@@ -19,6 +19,10 @@ public class ProductServlet extends HttpServlet {
     Integer gid=0;
     Integer size=0;
     Double current=0.0;
+
+    String zonghe = null;
+    String price =null;
+    String newproduct =null;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session=req.getSession();
@@ -27,10 +31,30 @@ public class ProductServlet extends HttpServlet {
         String ty = req.getParameter("ty");
         System.out.println(ty);
         if ("pro".equals(ty)){
+            /*获取前端传过来的参数*/
+            String newgid = req.getParameter("gid");
+            String newsize= req.getParameter("size");
+            String newcurrent= req.getParameter("current");
+            if ( newgid!= null) {
+                gid = Integer.parseInt(newgid);
+            }
+            if (newsize!= null) {
+                size=Integer.parseInt(newsize);
+            }
+            if (newcurrent!= null) {
+                current=Double.parseDouble(newcurrent);
+            }
+            /*System.out.println(gid+"33333333333333333333333");
+            System.out.println(size+"99999999999999999999999999");*/
+//排序
+            zonghe = req.getParameter("zonghe");
+            price = req.getParameter("price");
+            newproduct = req.getParameter("newproduct");
+
             //每页显示条数
-            Integer pageSize = 12;
+            Integer pageSize = 3;
             //总条数
-            Integer pageTotal= pro.getCount();
+            Integer pageTotal= pro.getCount(gid,size,current);
                 //当前页码
                 String newcUrrentPage = req.getParameter("currentPage");
                 Integer currentPage;
@@ -50,25 +74,8 @@ public class ProductServlet extends HttpServlet {
                 paging.setCurrentPage(currentPage);
 
 
-                /*获取前端传过来的参数*/
-            String newgid = req.getParameter("gid");
-            String newsize= req.getParameter("size");
-            String newcurrent= req.getParameter("current");
-            if ( newgid!= null) {
-               gid = Integer.parseInt(newgid);
-            }
-            if (newsize!= null) {
-                size=Integer.parseInt(newsize);
-            }
-            if (newcurrent!= null) {
-                current=Double.parseDouble(newcurrent);
-            }
-            /*System.out.println(gid+"33333333333333333333333");
-            System.out.println(size+"99999999999999999999999999");*/
-            List<Product> list=pro.selectNews(gid,size,current,paging);
-            for (Product product:list) {
-                System.out.println(product.getGid());
-            }
+
+            List<Product> list=pro.selectNews(gid,size,current,price,newproduct,paging);
             session.setAttribute("paging",paging);
             session.setAttribute("list",list);
             req.getRequestDispatcher("/atrs/communal/page.jsp").forward(req,resp);

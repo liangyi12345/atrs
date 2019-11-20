@@ -85,8 +85,8 @@
 					<div class="right clearfix fl">
 						<ul>
 							<li class="cur" onclick="fenlei02()">不限</li>
-							<li id="money1" value="5000" onclick="fenlei8()">小于10000元</li>
-							<li id="money2" value="10000" onclick="fenlei9()">小于30000元</li>
+							<li id="money1" value="10000" onclick="fenlei8()">小于10000元</li>
+							<li id="money2" value="20000" onclick="fenlei9()">小于20000元</li>
 							<li id="money3" value="30000" onclick="fenlei10()">30000元以上</li>
 						</ul>
 					</div>
@@ -103,9 +103,9 @@
 				<div class="left clearfix fl">
 					<!--以下li中添加cur的时候是选中的时候-->
 					<ul>
-						<li>综合排序</li>
-						<li class="xliang cur">价格</li>
-						<li class="xpin">新品</li>
+						<li onclick="log()">综合排序</li>
+						<li class="xliang cur" onclick="psort()">价格</li>
+						<li class="xpin" onclick="nsort()">新品</li>
 					</ul>
 				</div>
 			</div>

@@ -10,9 +10,9 @@ import java.util.List;
 
 public class ProductServiceImpl implements ProductService{
     @Override
-    public Integer getCount() {
+    public Integer getCount(Integer gid, Integer size, Double current) {
         SqlSession sqlSession= MyBatisUtil.createSqlSession();
-        Integer count = sqlSession.getMapper(ProductMapper.class).getCount();
+        Integer count = sqlSession.getMapper(ProductMapper.class).getCount(gid,size,current);
         MyBatisUtil.closeSqlSession(sqlSession);
         return count;
     }
@@ -33,6 +33,7 @@ public class ProductServiceImpl implements ProductService{
         return product;
     }
 
+
     @Override
     public List<Product> getPro() {
         SqlSession sqlSession= MyBatisUtil.createSqlSession();
@@ -41,10 +42,11 @@ public class ProductServiceImpl implements ProductService{
         return list;
     }
 
+
     @Override
-    public List<Product> selectNews(Integer gid, Integer size, Double current,Paging paging) {
+    public List<Product> selectNews(Integer gid, Integer size, Double current,String price, String newproduct,Paging paging) {
         SqlSession sqlSession= MyBatisUtil.createSqlSession();
-        List<Product> list=sqlSession.getMapper(ProductMapper.class).selectNews(gid,size,current,paging);
+        List<Product> list=sqlSession.getMapper(ProductMapper.class).selectNews(gid,size,current,price,newproduct,paging);
         MyBatisUtil.closeSqlSession(sqlSession);
         return list;
     }

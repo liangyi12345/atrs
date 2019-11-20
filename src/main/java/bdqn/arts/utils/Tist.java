@@ -31,7 +31,7 @@ public class Tist {
         Paging paging=new Paging();
         paging.setBegin(1);
         paging.setPageSize(12);
-        List<Product> list = sqlSession.getMapper(ProductMapper.class).selectNews(0, 0, 20000.0,paging);
+        List<Product> list = sqlSession.getMapper(ProductMapper.class).selectNews(0, 0, 20000.0,null,null,paging);
         for (Product P:list) {
             System.out.println(P.getCurrent());
         }

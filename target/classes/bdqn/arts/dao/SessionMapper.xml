@@ -11,6 +11,7 @@
     </resultMap>
 <select id="ExamineSession"  resultMap="session">
 SELECT * ,p.id as pid FROM  `session` s,`product` p  WHERE p.`sid` =s.id AND s.`id`=#{id}
+
 <if test="price == 'tru' ">
     ORDER BY p.`current` DESC
 </if>

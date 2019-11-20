@@ -41,7 +41,20 @@ FROM
     <!--查询商品数量-->
     <select id="getCount" resultType="int">
         SELECT COUNT(id)
-        FROM`arts`.`product` ;
+        FROM
+        `arts`.`product` where 1=1
+        <if test="gid!=0">
+            and gid=#{gid}
+        </if>
+        <if test="size!=0">
+            and `size` &lt;#{size}
+        </if>
+        <if test="current!=0.0 and current!=30000.0">
+            and `current` &lt;#{current}
+        </if>
+        <if test="current==30000.0 ">
+            and `current` &gt;#{current}
+        </if>
     </select>
     <!--查询所有商品信息-->
     <select id="getPro" resultType="bdqn.arts.pojo.Product">
@@ -79,7 +92,12 @@ FROM
         <if test="current==30000.0 ">
             and `current` &gt;#{current}
         </if>
-
+        <if test="price == 'tru' ">
+            ORDER BY product.`current` DESC
+        </if>
+        <if test="newproduct == 'tru'">
+            ORDER BY product.`dateIssued` DESC
+        </if>
         LIMIT #{paging.begin},#{paging.pageSize};
     </select>
 

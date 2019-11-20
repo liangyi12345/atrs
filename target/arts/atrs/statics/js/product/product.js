@@ -41,7 +41,6 @@ function fenlei02() {
     })
 }
 
-
 function fenlei1() {
     var gid=$("#shuhua").val();
     gid=parseInt(gid);
@@ -197,6 +196,51 @@ function fenlei10() {
         },
         dataType:"html",
         success:function (data) {
+            $("#page").html(data)
+        }
+    })
+}
+//排序
+
+function log() {
+    $.ajax({
+        type: "post",
+        url: "/ProductServlet",
+        data: {
+            ty:"pro",
+            zonghe:"tru"
+        },
+        dataType : "html",
+        success :function(data){
+            $("#page").html(data)
+        }
+    })
+}
+
+function psort() {
+    $.ajax({
+        type: "POST",
+        url: "/ProductServlet",
+        data: {
+            price:"tru",
+            ty:"pro"
+        },
+        dataType : "html",
+        success :function(data){
+            $("#page").html(data)
+        }
+    })
+}
+function nsort() {
+    $.ajax({
+        type: "POST",
+        url: "/ProductServlet",
+        data: {
+            ty:"pro",
+            newproduct:"tru"
+        },
+        dataType : "html",
+        success :function(data){
             $("#page").html(data)
         }
     })
