@@ -7,6 +7,7 @@
 SELECT *
 FROM`arts`.`product` LIMIT #{paging.begin},#{paging.pageSize};
 </select>
+
     <resultMap id="pr" type="bdqn.arts.pojo.Product">
         <id property="id" column="id"/>
         <association property="artist" javaType="bdqn.arts.pojo.Artist">
@@ -14,6 +15,7 @@ FROM`arts`.`product` LIMIT #{paging.begin},#{paging.pageSize};
             <result property="name" column="aname"/>
         </association>
     </resultMap>
+    <!--根据id查询商品信息-->
     <select id="getProduct" parameterType="int" resultMap="pr">
 SELECT
     `artist`.`name` as aname
@@ -36,12 +38,48 @@ FROM
     INNER JOIN `arts`.`product`
         ON (`artist`.`id` = `product`.`aid` AND `product`.`id` = #{id}) ;
     </select>
+    <!--查询商品数量-->
     <select id="getCount" resultType="int">
         SELECT COUNT(id)
         FROM`arts`.`product` ;
     </select>
+    <!--查询所有商品信息-->
     <select id="getPro" resultType="bdqn.arts.pojo.Product">
         SELECT *
         FROM`arts`.`product` ;
     </select>
+
+    <!--分类查询商品-->
+    <select id="selectNews" resultType="bdqn.arts.pojo.Product">
+        SELECT
+        `product`.`gid`
+        , `product`.`name`
+        , `product`.`introduction`
+        , `product`.`details`
+        , `product`.`inventory`
+        , `product`.`original`
+        , `product`.`current`
+        , `product`.`byTheTime`
+        , `product`.`dateIssued`
+        , `product`.`texture`
+        , `product`.`size`
+        , `product`.`ImagePath`
+        , `product`.`id`
+        FROM
+        `arts`.`product` where 1=1
+            <if test="gid!=0">
+                and gid=#{gid}
+            </if>
+            <if test="size!=0">
+               and size &lt;#{size}
+            </if>
+            <if test="current!=0.0 and current!=5000">
+                and current &lt;#{current}
+            </if>
+        <if test="current==5000">
+            and current &gt;#{current}
+        </if>
+        LIMIT #{paging.begin},#{paging.pageSize};
+    </select>
+
 </mapper>

@@ -16,6 +16,9 @@ import java.util.List;
 
 @WebServlet(urlPatterns={"/ProductServlet"},name = "ProductServlet")
 public class ProductServlet extends HttpServlet {
+    Integer gid=0;
+    Integer size=0;
+    Double current=0.0;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session=req.getSession();
@@ -25,7 +28,7 @@ public class ProductServlet extends HttpServlet {
         System.out.println(ty);
         if ("pro".equals(ty)){
             //每页显示条数
-            Integer pageSize = 3;
+            Integer pageSize = 12;
             //总条数
             Integer pageTotal= pro.getCount();
                 //当前页码
@@ -45,10 +48,29 @@ public class ProductServlet extends HttpServlet {
                     currentPage = paging.getPageCount();
                 }
                 paging.setCurrentPage(currentPage);
-            List<Product> list=pro.seclectAll(paging);
+
+
+                /*获取前端传过来的参数*/
+            String newgid = req.getParameter("gid");
+            String newsize= req.getParameter("size");
+            String newcurrent= req.getParameter("current");
+            if ( newgid!= null) {
+               gid = Integer.parseInt(newgid);
+            }
+            if (newsize!=null) {
+                size=Integer.parseInt(newsize);
+            }
+            if (newcurrent!=null) {
+                current=Double.parseDouble(newcurrent);
+            }
+            List<Product> list=pro.selectNews(gid,size,current,paging);
+            for (Product product:list) {
+                System.out.println(product.getGid());
+            }
             session.setAttribute("paging",paging);
             session.setAttribute("list",list);
             req.getRequestDispatcher("/atrs/communal/page.jsp").forward(req,resp);
+            System.out.println("***************************************");
         }
 
 

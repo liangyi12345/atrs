@@ -75,18 +75,12 @@ function tiao1(i) {
 
 
 
-
-
-
-
-
-
 function load() {
     $.ajax({
         type: "post",
         url: "/ProductServlet",
         data: {
-            ty:"pro",
+            ty:"pro"
         },
         dataType : "html",
         success :function(data){

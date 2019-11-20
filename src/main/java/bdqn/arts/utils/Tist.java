@@ -13,7 +13,7 @@ import java.util.List;
 
 public class Tist {
     public static void main(String[] args) {
-        SqlSession sqlSession = MyBatisUtil.createSqlSession();
+  /*      SqlSession sqlSession = MyBatisUtil.createSqlSession();
         Paging paging = new Paging();
         paging.setCurrentPage(2);
         paging.setPageSize(3);
@@ -24,6 +24,14 @@ public class Tist {
 
         for (Product p :session.getSlist() ) {
             System.out.println(p.getName());
+        }*/
+        SqlSession sqlSession = MyBatisUtil.createSqlSession();
+        Paging paging=new Paging();
+        paging.setBegin(2);
+        paging.setPageSize(2);
+        List<Product> list = sqlSession.getMapper(ProductMapper.class).selectNews(0, 0, 0.0,paging);
+        for (Product P:list) {
+            System.out.println(P.getCurrent());
         }
 
 

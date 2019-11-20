@@ -71,7 +71,6 @@ public class SessionServlet extends HttpServlet {
 
 
 
-
             Session se = service.ExamineSession(id, price, newproduct,paging);
             ArrayList<Product> slist = se.getSlist();
             session.setAttribute("slist",slist);

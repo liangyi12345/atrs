@@ -40,4 +40,12 @@ public class ProductServiceImpl implements ProductService{
         MyBatisUtil.closeSqlSession(sqlSession);
         return list;
     }
+
+    @Override
+    public List<Product> selectNews(Integer gid, Integer size, Double current,Paging paging) {
+        SqlSession sqlSession= MyBatisUtil.createSqlSession();
+        List<Product> list=sqlSession.getMapper(ProductMapper.class).selectNews(gid,size,current,paging);
+        MyBatisUtil.closeSqlSession(sqlSession);
+        return list;
+    }
 }
