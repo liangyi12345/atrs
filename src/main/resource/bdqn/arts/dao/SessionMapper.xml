@@ -34,6 +34,5 @@ SELECT * ,p.id as pid FROM  `session` s,`product` p  WHERE p.`sid` =s.id AND s.`
         <if test="newproduct == 'tru'">
             ORDER BY p.`dateIssued` DESC
         </if>
-
     </select>
 </mapper>

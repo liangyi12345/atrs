@@ -74,7 +74,7 @@
 				<div class="list clearfix fl box-s transition">
 					<div class="tu clearfix fl">
 						<c:forEach var="pr" items="${sess.value.slist}" begin="1" end="1">
-							<img src="${ctx}/atrs/statics/files/zuopin/${pr.imagePath}"/>
+							<a href="${ctx}/ProductServlet?pid=${pr.id}&ty=commodit"><img src="${ctx}/atrs/statics/files/zuopin/${pr.imagePath}"/></a>
 							<span></span>
 						</c:forEach>
 
@@ -91,7 +91,7 @@
 							<ul>
 								<c:forEach var="pr" items="${sess.value.slist}" begin="0" end="4">
 									<li>
-											<a href="pro_detail.html">
+											<a href="${ctx}/ProductServlet?pid=${pr.id}&ty=commodit">
 												<img src="${ctx}/atrs/statics/files/zuopin/${pr.imagePath}"/>
 												<span></span>
 											</a>
