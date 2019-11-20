@@ -71,14 +71,15 @@ FROM
                 and gid=#{gid}
             </if>
             <if test="size!=0">
-               and size &lt;#{size}
+               and `size` &lt;#{size}
             </if>
-            <if test="current!=0.0 and current!=5000">
-                and current &lt;#{current}
+            <if test="current!=0.0 and current!=30000.0">
+                and `current` &lt;#{current}
             </if>
-        <if test="current==5000">
-            and current &gt;#{current}
+        <if test="current==30000.0 ">
+            and `current` &gt;#{current}
         </if>
+
         LIMIT #{paging.begin},#{paging.pageSize};
     </select>
 

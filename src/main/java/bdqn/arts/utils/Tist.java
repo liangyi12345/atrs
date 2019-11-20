@@ -29,9 +29,9 @@ public class Tist {
         }*/
         SqlSession sqlSession = MyBatisUtil.createSqlSession();
         Paging paging=new Paging();
-        paging.setBegin(2);
-        paging.setPageSize(2);
-        List<Product> list = sqlSession.getMapper(ProductMapper.class).selectNews(0, 0, 0.0,paging);
+        paging.setBegin(1);
+        paging.setPageSize(12);
+        List<Product> list = sqlSession.getMapper(ProductMapper.class).selectNews(0, 0, 20000.0,paging);
         for (Product P:list) {
             System.out.println(P.getCurrent());
         }
