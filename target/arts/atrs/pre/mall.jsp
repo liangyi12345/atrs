@@ -22,6 +22,7 @@
 	<script src="${ctx}/atrs/statics/js/jquery-1.8.3.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="${ctx}/atrs/statics/js/jquery.SuperSlide.2.1.js"></script>
 	<script type="text/javascript" src="${ctx}/atrs/statics/js/paging/page.js"></script>
+	<script type="text/javascript" src="${ctx}/atrs/statics/js/product/product.js"></script>
 </head>
 
 <body>
@@ -57,10 +58,10 @@
 					<div class="right clearfix fl">
 						<ul>
 							<li class="cur">不限</li>
-							<li class="">书画</li>
-							<li class="">油画</li>
-							<li class="">版画</li>
-							<li class="">雕塑</li>
+							<li class="" id="shuhua" onclick="fenlei1()" value="1">书画</li>
+							<li class="" id="youhau" onclick="fenlei2()" value="2">油画</li>
+							<li class="" id="banhua" onclick="fenlei3()" value="3">版画</li>
+							<li class="" id="diaoshu" onclick="fenlei4()" value="4">雕塑</li>
 						</ul>
 					</div>
 				</div>
@@ -71,9 +72,9 @@
 					<div class="right clearfix fl">
 						<ul>
 							<li class="cur">不限</li>
-							<li>小于50cm</li>
-							<li>500-100cm</li>
-							<li>大于150cm</li>
+							<li id="cicun1" onclick="fenlei5()" value="60">小于60cm</li>
+							<li id="cicun2" onclick="fenlei6()" value="150">小于150cm</li>
+							<li id="cicun3" onclick="fenlei7()" value="200">小于200cm</li>
 						</ul>
 					</div>
 				</div>
@@ -84,10 +85,8 @@
 					<div class="right clearfix fl">
 						<ul>
 							<li class="cur">不限</li>
-							<li>0-1000元</li>
-							<li>1000-2000元</li>
-							<li>2000-3000元</li>
-							<li>3000-5000元</li>
+							<li>0-2000元</li>
+							<li>2000-5000元</li>
 							<li>5000元以上</li>
 						</ul>
 					</div>
@@ -124,10 +123,8 @@
 
 		</div>
 
-
 			</div>
 		</div>
-
 
 
 

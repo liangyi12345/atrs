@@ -56,7 +56,7 @@
     </div>
     <div class="bottom clearfix">
         <div class="logo clearfix">
-            <a href="index.html"></a>
+            <a href="atrs/pre/index.jsp"></a>
         </div>
         <div class="search clearfix fr ra5">
             <input type="text" class="fl" name="" id="" value="" placeholder="请输入您要搜索的内容" />

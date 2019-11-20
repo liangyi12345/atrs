@@ -21,6 +21,15 @@ public class Product {
   private Integer size;
   private String imagePath;
   private Artist artist;
+  private Genre genre;
+
+  public Genre getGenre() {
+    return genre;
+  }
+
+  public void setGenre(Genre genre) {
+    this.genre = genre;
+  }
 
   public Artist getArtist() {
     return artist;

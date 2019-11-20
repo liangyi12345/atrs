@@ -8,10 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="arts" />
         <module name="atrs1" />
+        <module name="atrs" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="arts" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>
