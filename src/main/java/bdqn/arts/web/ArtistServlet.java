@@ -1,10 +1,12 @@
 package bdqn.arts.web;
 
 import bdqn.arts.pojo.Artist;
+import bdqn.arts.pojo.Genre;
 import bdqn.arts.pojo.Product;
 import bdqn.arts.pojo.User;
 import bdqn.arts.service.Artist.ArtistServicImpl;
 import bdqn.arts.service.Artist.ArtistService;
+import bdqn.arts.utils.Paging;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,15 +23,50 @@ import java.util.Map;
 
 @WebServlet(urlPatterns={"/ArtistServlet"},name = "ArtistServlet")
 public class ArtistServlet extends HttpServlet {
+    Integer gid=0;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ArtistService artis = new ArtistServicImpl();
         HttpSession session = req.getSession();
+        Paging paging = new Paging();
         String ty = req.getParameter("ty");
-        if ("ar".equals(ty)){
-            List<Artist> alist =artis.showArtist();
+
+        if ("ar".equals(ty)) {
+            /*Genre getclassify = artis.getclassify(id);*/
+       /*     List<Artist> genres = getclassify.getGenres();*/
+            String newgid = req.getParameter("gid");
+            if ( newgid!= null) {
+                gid = Integer.parseInt(newgid);
+            }
+
+            //每页显示条数
+            Integer pageSize =3;
+            //总条数
+            Integer pageTotal= artis.getCount(gid);
+            //当前页码
+            String newcUrrentPage = req.getParameter("currentPage");
+            Integer currentPage;
+            if(newcUrrentPage==null){
+                currentPage =1;
+            }else{
+                currentPage = Integer.parseInt(newcUrrentPage);
+            }
+            paging.setBegin((currentPage-1)*pageSize);
+            paging.setPageSize(pageSize);
+            paging.setPageTotal(pageTotal);
+            if(currentPage<1){
+                currentPage =1;
+            }else if(currentPage>paging.getPageCount()){
+                currentPage = paging.getPageCount();
+            }
+            paging.setCurrentPage(currentPage);
+
+            List<Artist> alist =artis.showArtist(gid,paging);
+            session.setAttribute("paging",paging);
             session.setAttribute("amap",alist);
-            req.getRequestDispatcher("/atrs/pre/artist.jsp").forward(req,resp);
+            /*session.setAttribute("genres",genres);*/
+            req.getRequestDispatcher("atrs/communal/art.jsp").forward(req,resp);
         }
 
         if("adetail".equals(ty)){

@@ -29,13 +29,13 @@ public class IndexFilter implements Filter {
         System.out.println("这是测试");
         ArtistService asi=new ArtistServicImpl();
         ProductService ps=new ProductServiceImpl();
-        List<Artist> list=asi.showArtist();
+        List<Artist> list=asi.showArtist(0,null);
         List<Product> lists=ps.getPro();
         Product product1=ps.getProduct(3);
         Product product2=ps.getProduct(5);
         Product product3=ps.getProduct(7);
         Product product4=ps.getProduct(9);
-        rq.setAttribute("artist", list);
+       rq.setAttribute("artist", list);
         rq.setAttribute("products",lists );
         rq.setAttribute("product1",product1);
         rq.setAttribute("product2",product2);

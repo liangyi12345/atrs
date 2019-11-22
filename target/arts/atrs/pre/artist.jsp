@@ -21,7 +21,7 @@
 		<link rel="stylesheet" type="text/css" href="${ctx}/atrs/statics/css/base.css" />
 		<script src="${ctx}/atrs/statics/js/jquery-1.8.3.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="${ctx}/atrs/statics/js/jquery.SuperSlide.2.1.js"></script>
-
+            <script type="text/javascript" src="${ctx}/atrs/statics/js/art/art.js"></script>
 	</head>
 
 	<body>
@@ -33,10 +33,10 @@
 		<div class="navbar clearfix">
 			<div class="content clearfix">
 				<ul>
-					<li><a href="${ctx}/atrs/pre/index.jsp">首页</a></li>
-					<li><a href="${ctx}/sessionServlet?ty=session">专场</a></li>
-					<li><a href="${ctx}/atrs/pre/mall.jsp">商城</a></li>
-					<li class="cur"><a href="${ctx}/ArtistServlet?ty=ar">艺术家</a></li>
+                    <li><a href="${ctx}/atrs/pre/index.jsp">首页</a></li>
+                    <li><a href="${ctx}/sessionServlet?ty=session">专场</a></li>
+                    <li ><a href="${ctx}/atrs/pre/mall.jsp">商城</a></li>
+                    <li class="cur"><a href="${ctx}/atrs/pre/artist.jsp">艺术家</a></li>
 				</ul>
 			</div>
 		</div>
@@ -50,6 +50,7 @@
 					<div class="top clearfix box-s">
 						您的位置：艺术家
 					</div>
+
 					<div class="listed clearfix box-s">
 						<div class="list clearfix fl">
 							<p class="bt fl">
@@ -57,11 +58,11 @@
 							</p>
 							<div class="right clearfix fl">
 								<ul>
-									<li class="cur">全部</li>
-									<li class="">书画</li>
-									<li class="">油画</li>
-									<li class="">版画</li>
-									<li class="">雕塑</li>
+									<li class="cur"onclick="fenlei()" value="0">全部</li>
+									<li class="" id="shuhau" value="1" onclick="fenlei1()">书画</li>
+									<li class="" id="youhua" value="2" onclick="fenlei2()">油画</li>
+									<li class="" id="banhua" value="3" onclick="fenlei3()">版画</li>
+									<li class="" id="diaoxaing" value="4" onclick="fenlei4()">雕塑</li>
 								</ul>
 								<a href="settled.jsp" class="shenqin fr">申请签约入驻</a>
 							</div>
@@ -110,6 +111,14 @@
 					<div class="artist-top clearfix">
 						<span>全部艺术家</span>
 					</div>
+
+                    <script>
+                           load();
+                    </script>
+                    <div id="art">
+
+                    </div>
+<%--
 					<c:forEach var="alist" items="${amap}" >
 					<div class="artist-bottom clearfix">
 						<div class="list clearfix fl">
@@ -135,19 +144,7 @@
 						</div>
 
 					</div>
-					</c:forEach>
-					<div class="page clearfix ta-right fl mt25">
-						<a href="#" class="pre box-s">上一页</a>
-						<a href="#">1</a>
-						<a href="#">2</a>
-						<a href="#">3</a>
-						<span>...</span>
-						<a href="#" class="next box-s">下一页</a>
-						<span class="ml10">到第</span>
-						<input type="" name="" id="" value="" />
-						<span>页</span>
-						<input type="submit" name="" id="" value="确定" />
-					</div>
+					</c:forEach>--%>
 				</div>
 			</div>
 			<!--artist end-->
@@ -157,5 +154,13 @@
 	<c:import url="${ctx}/atrs/communal/footer.jsp"/>
 	<!--footer end-->
 	</body>
+		<script type="text/javascript">
+			$('.listed .list ul li').each(function() {
+				$(this).click(function() {
+					$(this).siblings("li").removeClass("cur");
+					$(this).addClass("cur");
+				});
+			});
+		</script>
 	<script src="${ctx}/atrs/statics/js/other.js" type="text/javascript" ></script>
 </html>
